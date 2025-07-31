@@ -1,5 +1,6 @@
 # Imagen base oficial con Maven y Java 11
-FROM maven:3.8.7-openjdk-11
+FROM maven:3.9.6-eclipse-temurin-11
+
 
 # Crear carpeta de trabajo
 WORKDIR /app
