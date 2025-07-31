@@ -1,16 +1,13 @@
-# Imagen base con Java 11
-FROM openjdk:11-jdk
+# Imagen base oficial con Maven y Java 11
+FROM maven:3.8.7-openjdk-11
 
-# Instalar Maven
-RUN apt-get update && apt-get install -y maven
-
-# Crear carpeta de la app
+# Crear carpeta de trabajo
 WORKDIR /app
 
-# Copiar archivos del proyecto
+# Copiar todo el proyecto
 COPY . .
 
-# Compilar el proyecto
+# Compilar el proyecto con Maven
 RUN mvn clean package
 
 # Ejecutar la aplicación usando webapp-runner y Tomcat embebido
